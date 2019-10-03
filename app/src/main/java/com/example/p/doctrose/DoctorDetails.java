@@ -65,32 +65,32 @@ public class DoctorDetails extends AppCompatActivity {
     }
 
     private void saveuserinfo() {
-        name = editTextname.getText().toString().trim();
-        address = editTextaddress.getText().toString().trim();
-        qualification = editTextqualification.getText().toString().trim();
-        speciality = editTextspeciality.getText().toString().trim();
+        name_of_the_doctor = editTextname.getText().toString().trim();
+        address_of_the_doctor = editTextaddress.getText().toString().trim();
+        qualification_of_the_doctor  = editTextqualification.getText().toString().trim();
+        speciality_of_the_doctor  = editTextspeciality.getText().toString().trim();
         rate = "0.0";
 
-        if(TextUtils.isEmpty(name)){
+        if(TextUtils.isEmpty(name_of_the_doctor )){
             Toast.makeText(this, "Please fill the fields!!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(address)){
+        if(TextUtils.isEmpty(address_of_the_doctor )){
             Toast.makeText(this, "Please fill the fields!!!", Toast.LENGTH_SHORT).show();
         }
-        if(TextUtils.isEmpty(qualification)){
+        if(TextUtils.isEmpty(qualification_of_the_doctor )){
             Toast.makeText(this, "Please fill the fields!!!",Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(speciality)){
+        if(TextUtils.isEmpty(speciality_of_the_doctor )){
             Toast.makeText(this, "Please fill the fields!!!",Toast.LENGTH_SHORT).show();
             return;
         }
         DoctorInfo doctorInfo = new DoctorInfo(name,address,qualification,speciality,rate);
-        name = editTextname.getText().toString().trim();
-        address = editTextaddress.getText().toString().trim();
-        qualification = editTextqualification.getText().toString().trim();
-        speciality = editTextspeciality.getText().toString().trim();
+        name_of_the_doctor  = editTextname.getText().toString().trim();
+        address_of_the_doctor  = editTextaddress.getText().toString().trim();
+        qualification_of_the_doctor  = editTextqualification.getText().toString().trim();
+        speciality_of_the_doctor  = editTextspeciality.getText().toString().trim();
         FirebaseUser firebaseUser =firebaseAuth.getCurrentUser();
         databaseReference.child("Doctor").child(firebaseUser.getUid()).setValue(doctorInfo);
         Toast.makeText(this,"INFORMATION SAVED!!!",Toast.LENGTH_SHORT).show();
